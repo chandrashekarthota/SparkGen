@@ -1,0 +1,93 @@
+<div id="queryBuilder">
+    <div id="lblBuilder">
+        Query Builder
+    </div>
+
+    <div id="addDataFrame">
+        + Add Data Frame
+    </div>
+
+    <div class="dfContainer">
+        <div class="inlineBlock">
+            <div>
+                <select id="sourceSel" name="Data Source">
+                    <option value="">Source Type</option>
+                </select>
+            </div>
+            <div>
+                <input type="text" id="txtFileName" placeholder="File Name">
+            </div>
+            <div>
+                <input type="text" id="txtHeaders" placeholder="comma separated header names">
+            </div>
+
+        </div>
+
+        <div class="inlineBlock">
+            <div>
+                <select id="colSelect" name="selector" multiple>
+                    <option value="">Columns to Display</option>
+                </select>
+            </div>
+
+        </div>
+
+        <div class="inlineBlock">
+            <div>
+                <select id="condiSel" name="selector">
+                    <option value="">Condition</option>
+                </select>
+            </div>
+            <div>
+                <div>
+                    <select id="filterBySel" name="filterBySel">
+                        <option value="">Filter On</option>
+                    </select>
+                </div>
+                <div>
+                    <input type="text" id="txtClause" placeholder="clause">
+                </div>
+            </div>
+        </div>
+
+        <div class="inlineBlock">
+            <div>
+                <select id="groupBySel" name="groupBySel">
+                    <option value=""> Group by</option>
+                </select>
+            </div>
+            <div>
+                <div>
+                    <select id="sortByCol" name="sortByCol">
+                        <option value="">Sort By</option>
+                    </select>
+                </div>
+                <div>
+                    <select id="sortType" name="selector">
+                        <option value="asc">Asc</option>
+                        <option value="desc">Desc</option>
+                    </select>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="inlineBlock">
+            <div>
+                <input type="checkbox" id="chboxDuplicate"> No Duplicates
+            </div>
+        </div>
+<hr>
+    </div>
+
+    <div>
+        <input type="button" value="Generate" id="btnGenerate">
+    </div>
+    <!-- <div>
+        <textarea rows="30" cols="80" id="qryContainer">
+
+    </textarea>
+    </div> -->
+
+</div>

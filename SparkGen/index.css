@@ -1,0 +1,66 @@
+#btnBuildQuery{
+    color: gray;
+    padding: 4px;
+    cursor: pointer;
+}
+
+#queryBuilder #queryContainer{
+    z-index: 10000;
+    border: solid;
+    background: #f9fbfd;
+    padding: 10px;
+    font-size: 10px;
+    font-family: segoe-ui-light;
+    border-color: lightgray;
+    height: 200px;
+    margin: 5px;
+    width: 99%;
+    border-width: thin;
+}
+
+#queryBuilder #lblBuilder, #addDataFrame{
+    float: right;
+    font-size: 12px;
+    font-family: segoe ui semibold;
+    padding: 0;
+    font-style: italic;
+    color: gray;
+    position: absolute;
+    right: 20px;
+}
+
+#queryBuilder #addDataFrame{
+    top:100px;
+    cursor: pointer;
+}
+
+#queryBuilder div{
+    padding: 4px;
+}
+
+#queryBuilder select{
+    width: 205px;
+}
+
+#queryBuilder .inlineBlock{
+    display: inline-block;
+    vertical-align: top;
+}
+
+#queryBuilder #btnGenerate{
+    padding: 5px;
+    font-family: segoe ui semibold;
+    color: dimgray;
+    position: absolute;
+    float: right;
+    right: 10px;
+    bottom: 10px;
+}
+#queryBuilder #colSelect{
+    height: 100px !important;
+}
+#queryBuilder #txtHeaders, 
+#queryBuilder #colSelect{
+    height: 40px;
+}
+
