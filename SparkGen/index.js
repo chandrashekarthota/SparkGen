@@ -28,6 +28,7 @@ $(document).ready(function () {
     var selectstring = '';
     var dfReadSource = '';
     var conditionsString='';
+    var selectedCols = '';
 
     var checkContents = setInterval(function () {
         if (document.getElementById('queryBuilder')) {
@@ -67,6 +68,7 @@ $(document).ready(function () {
                         for (var i = 0; i < selectedColsArray.length; i++) {
                             selstr += '"' + selectedColsArray[i] + '"' + ',';
                         }
+                        selectedCols = selstr;
                         selectstring = '.select(' + selstr + ')';
                     }
                 }
@@ -92,6 +94,7 @@ $(document).ready(function () {
         var load = getLoadType(sourceType);
         var filePath = $('#txtFileName').val();
         dfReadSource = readDataFrame(sourceType, load, filePath);
+        conditionsString = readConditions(selectedCols);
 
         //read file
         query += dfReadSource;
@@ -100,6 +103,7 @@ $(document).ready(function () {
         query += selectstring;
 
         //adding filter conditions
+        query += conditionsString;
 
         //show df
         query += '  df.show()';
@@ -109,7 +113,12 @@ $(document).ready(function () {
 
 //handling reading dataframe source
 function readDataFrame(sourceType, load, filePath) {
-    return 'df = spark.read.format("' + sourceType + '").' + load + '("' + filePath + '")';
+    // return 'df = spark.read.format("' + sourceType + '").' + load + '("' + filePath + '")';
+    return 'df = spark.read.format("' + sourceType + '").' + load + '("' + filePath + '.'+ load +'")';
+}
+
+function readConditions(selectedCols){
+    return ' df.sort('+selectedCols+')';
 }
 
 function getLoadType(sourceType) {
