@@ -103,7 +103,10 @@ $(document).ready(function () {
         query += selectstring;
 
         //adding filter conditions
-        query += conditionsString;
+        console.log('Test:::::::::::::::',$('#sortByCol').value)
+        if($('#sortByCol').value){
+            query += conditionsString;
+        }
 
         //show df
         query += '  df.show()';
@@ -114,7 +117,7 @@ $(document).ready(function () {
 //handling reading dataframe source
 function readDataFrame(sourceType, load, filePath) {
     // return 'df = spark.read.format("' + sourceType + '").' + load + '("' + filePath + '")';
-    return 'df = spark.read.format("' + sourceType + '").' + load + '("' + filePath + '.'+ load +'")';
+    return 'df = spark.read.format("' + sourceType + '").load("' + filePath + '.'+ load +'")';
 }
 
 function readConditions(selectedCols){
@@ -127,6 +130,10 @@ function getLoadType(sourceType) {
 
     if (sourceType == 'json') {
         load = 'json';
+    }
+
+    if (sourceType == 'csv') {
+        load = 'csv';
     }
 
     if (sourceType == 'txt') {
