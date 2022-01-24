@@ -2,6 +2,7 @@
     color: gray;
     padding: 4px;
     cursor: pointer;
+    width: 100px;
 }
 
 #queryBuilder #queryContainer{
